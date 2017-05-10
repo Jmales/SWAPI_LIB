@@ -5,9 +5,48 @@
         <title>Library for SWAPI</title>
 	</head>
     <body>
+        
+        <!--Test div-->
+        <div id="test">Test being performed on console. Check developer tools.</div>
+
+        <script src="./lib/swapiLib.js"></script>
+        <script>
+
+                function treatData(url,data){
+                    console.log("%c"+ url,'background: green; color: white; display: block;');
+                    console.log(data);
+                }
+
+                // swapiLib.getResources(treatData);
+
+                // swapiLib.getPerson(1,treatData);
+                 swapiLib.getMultiplePeople([1,2,3],treatData);
+                // swapiLib.getAllPeople(treatData);
+                // swapiLib.getPeopleSchema(treatData),
+
+                // swapiLib.getFilm(1,treatData);
+                // swapiLib.getAllFilms(treatData);
+                // swapiLib.getFilmsSchema(treatData);
+
+                // swapiLib.getStarship(1,treatData);
+                // swapiLib.getAllStarships(treatData);
+                // swapiLib.getStarshipSchema(treatData);
+
+                // swapiLib.getVechicle(1,treatData);
+                // swapiLib.getAllVechicles(treatData);
+                // swapiLib.getVechiclesSchema(treatData);
+
+                // swapiLib.getSpecies(1,treatData);
+                // swapiLib.getAllSpecies(treatData);
+                // swapiLib.getSpeciesSchema(treatData);
+
+                // swapiLib.getPlanet(1,treatData);
+                // swapiLib.getAllPlanets(treatData);
+                // swapiLib.getPlanetsSchema(treatData);
+
+        </script>
 
     </body>
-
 
 </html>
 
