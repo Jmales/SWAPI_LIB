@@ -4,6 +4,7 @@ Library/Wrapper for https://swapi.co
 Getting Started:
 
 There are five categories of functions in this library, acoording to the API resources: People, Films, Starships, Vehicles, Species and Planets. Each category has 2 functions e.g. for Planets they are:
+
 -> getPlanets(id): e.g. getPlanets(1), getPlanets([1,2,3]), getPlanets()
 -> getPlanetsSchema()
 
