@@ -5,10 +5,11 @@ Getting Started:
 
 There are five categories of functions in this library, acoording to the API resources: People, Films, Starships, Vehicles, Species and Planets. Each category has 2 functions e.g. for Planets they are:
 
--> getPlanets(id): e.g. getPlanets(1), getPlanets([1,2,3]), getPlanets()
--> getPlanetsSchema()
+	-> getPlanets(id): e.g. getPlanets(1), getPlanets([1,2,3]), getPlanets()
+	-> getPlanetsSchema()
 
 The first function `getPlanets()` accepts three variations of inputs:
+
     -> 0 inputs: `getPlanets()` returns information on all the available Planets;
     -> 1 input: 
 	- 1 id: `getPlanets(1)` returns information about the 1st Planet, if there is one
