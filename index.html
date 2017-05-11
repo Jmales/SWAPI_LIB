@@ -10,79 +10,73 @@
 
     <!--Test div-->
     <div>
-        <h1>Test being performed on console. Check developer tools.</h1>
+        <h1>Test being performed on console. Check developer tools.</h1><br>
     </div>
-
+    
     <script src="./lib/swapiLib.js"></script>
     <script>
         //Function used to treat data coming from 'swapiLib' methods
-        function treatData(url, data) {
-            console.log("%c" + url, 'background: green; color: white; display: block;');
-            console.log(data);
-            var div = document.createElement("div");
-            div.innerHTML = url + ":::" + Object.values(data) + "<br><br>";
-            document.body.appendChild(div);
-
-        }
-
-        // //Change function
-        // var Obj = swapiLib;
-        // console.log(swapiLib);
-
-        // console.log(swapiLib.getResources);
-        // Obj.getResources(treatData);
-        // Obj.getResources = function () {
-        //     console.log("what");
-        // }
-        // console.log(swapiLib.getResources);
-        // swapiLib.getResources(treatData);
-
+        var treatData = function(functionName){
+            functionName
+            .then(function (response) {
+                console.log("%c" + "New Query", 'background: green; color: white; display: block;');
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+        });
+    }
+    
         //TESTS
-        var test = swapiLib.getResources(); //Is supposed to give ERROR
-        console.log(test);
+        // treatData(swapiLib.getResources())
+        // treatData(swapiLib.getResources(1));  //Is supposed to give ERROR
 
-        test = swapiLib.getResources(treatData,treatData,treatData); //Is supposed to give ERROR
-        console.log(test);
+        // var People = swapiLib.People;
+        // treatData(People.getPeople([1,200])); 
+        // treatData(People.getPeople(1,2));     //Is supposed to give ERROR
+        // treatData(People.getPeople([1,2,3]));
+        // treatData(People.getPeople());        //Get all People
+        // treatData(People.getPeopleSchema())
 
-        swapiLib.getResources(treatData);
+        // var Films = swapiLib.Films;
+        // treatData(Films.getFilms(1)); 
+        // treatData(Films.getFilms(1,2));     //Is supposed to give ERROR
+        // treatData(Films.getFilms([1,2,3]));
+        // treatData(Films.getFilms());        //Get all Films
+        // treatData(Films.getFilmsSchema());
 
-        var People = swapiLib.People;
-        People.getPerson(1,treatData);
-        People.getMultiplePeople([1,2,3],treatData);
-        People.getAllPeople(treatData);
-        People.getPeopleSchema(treatData);
+        // var Starships = swapiLib.Starships;
+        // treatData(Starships.getStarships(10)); 
+        // treatData(Starships.getStarships(1,177));     //Is supposed to give ERROR
+        // treatData(Starships.getStarships([1,2,3]));   
+        // treatData(Starships.getStarships());        //Get all Starships
+        // treatData(Starships.getStarshipsSchema());
 
-        var Films = swapiLib.Films;
-        Films.getFilm(1,treatData);
-        Films.getMultipleFilms([1,2,3],treatData);
-        Films.getAllFilms(treatData);
-        Films.getFilmsSchema(treatData);
+        // var Vehicles = swapiLib.Vehicles;
+        // treatData(Vehicles.getVehicles(4));
+        // treatData(Vehicles.getVehicles([1,2,3]));
+        // treatData(Vehicles.getVehicles([4,6,8,14]));
+        // treatData(Vehicles.getVehicles());
+        // treatData(Vehicles.getVehiclesSchema());
 
-        var Starships = swapiLib.Starships;
-        Starships.getStarship(15,treatData);
-        Starships.getMultipleStarships([1,2,3],treatData);//Is supposed to give ERROR
-        Starships.getMultipleStarships([15,12],treatData);
-        Starships.getAllStarships(treatData);
-        Starships.getStarshipSchema(treatData);
+        swapiLib.Vehicles.getVehicles([1,2,3]).then(function (response) {
+                console.log("%c" + "New Query", 'background: green; color: white; display: block;');
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+        });
+        // var Species = swapiLib.Species;
+        // treatData(Species.getSpecies(1));
+        // treatData(Species.getSpecies([1,2,3]));
+        // treatData(Species.getSpecies());
+        // treatData(Species.getSpeciesSchema());
 
-        var Vehicles = swapiLib.Vehicles;
-        Vehicles.getVehicle(4,treatData);
-        Vehicles.getMultipleVehicles([1,2,3],treatData); //Is supposed to give ERROR
-        Vehicles.getMultipleVehicles([4,6,8,14],treatData);
-        Vehicles.getAllVehicles(treatData);
-        Vehicles.getVehiclesSchema(treatData);
-
-        var Species = swapiLib.Species;
-        Species.getSpecies(1,treatData);
-        Species.getMultipleSpecies([1,2,3],treatData);
-        Species.getAllSpecies(treatData);
-        Species.getSpeciesSchema(treatData);
-
-        var Planets = swapiLib.Planets;
-        Planets.getPlanet(1,treatData);
-        Planets.getMultiplePlanets([1,2,3],treatData);
-        Planets.getAllPlanets(treatData);
-        Planets.getPlanetsSchema(treatData);
+        // var Planets = swapiLib.Planets;
+        // treatData(Planets.getPlanets(1));
+        // treatData(Planets.getPlanets([1,2,3]));
+        // treatData(Planets.getPlanets());
+        // treatData(Planets.getPlanetsSchema());
         //------------- TESTS end ----------------------------------
     </script>
 
