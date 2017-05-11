@@ -7,43 +7,62 @@
     <body>
         
         <!--Test div-->
-        <div id="test">Test being performed on console. Check developer tools.</div>
+        <div><h1>Test being performed on console. Check developer tools.</h1></div>
 
         <script src="./lib/swapiLib.js"></script>
         <script>
-
+                //Function used to treat data coming from 'swapiLib' methods
                 function treatData(url,data){
                     console.log("%c"+ url,'background: green; color: white; display: block;');
                     console.log(data);
+                    var div = document.createElement("div");  
+                    div.innerHTML = url+":::" +Object.values(data)+"<br><br>";
+                    document.body.appendChild(div);  
+                    
                 }
+                
+                //TESTS
+                var test = swapiLib.getResources(); //Is supposed to give ERROR
+                console.log(test);
 
-                // swapiLib.getResources(treatData);
+                test = swapiLib.getResources(treatData,treatData,treatData); //Is supposed to give ERROR
+                console.log(test);
 
-                // swapiLib.getPerson(1,treatData);
-                 swapiLib.getMultiplePeople([1,2,3],treatData);
-                // swapiLib.getAllPeople(treatData);
-                // swapiLib.getPeopleSchema(treatData),
+                a = swapiLib.getResources(treatData);
+                console.log(a);
 
-                // swapiLib.getFilm(1,treatData);
-                // swapiLib.getAllFilms(treatData);
-                // swapiLib.getFilmsSchema(treatData);
+                swapiLib.getPerson(1,treatData);
+                swapiLib.getMultiplePeople([1,2,3],treatData);
+                swapiLib.getAllPeople(treatData);
+                swapiLib.getPeopleSchema(treatData),
 
-                // swapiLib.getStarship(1,treatData);
-                // swapiLib.getAllStarships(treatData);
-                // swapiLib.getStarshipSchema(treatData);
+                swapiLib.getFilm(1,treatData);
+                swapiLib.getMultipleFilms([1,2,3],treatData);
+                swapiLib.getAllFilms(treatData);
+                swapiLib.getFilmsSchema(treatData);
 
-                // swapiLib.getVechicle(1,treatData);
-                // swapiLib.getAllVechicles(treatData);
-                // swapiLib.getVechiclesSchema(treatData);
+                swapiLib.getStarship(15,treatData);
+                swapiLib.getMultipleStarships([1,2,3],treatData);//Is supposed to give ERROR
+                swapiLib.getMultipleStarships([15,12],treatData);
+                swapiLib.getAllStarships(treatData);
+                swapiLib.getStarshipSchema(treatData);
 
-                // swapiLib.getSpecies(1,treatData);
-                // swapiLib.getAllSpecies(treatData);
-                // swapiLib.getSpeciesSchema(treatData);
+                swapiLib.getVehicle(4,treatData);
+                swapiLib.getMultipleVehicles([1,2,3],treatData); //Is supposed to give ERROR
+                swapiLib.getMultipleVehicles([4,6,8,14],treatData);
+                swapiLib.getAllVehicles(treatData);
+                swapiLib.getVehiclesSchema(treatData);
 
-                // swapiLib.getPlanet(1,treatData);
-                // swapiLib.getAllPlanets(treatData);
-                // swapiLib.getPlanetsSchema(treatData);
+                swapiLib.getSpecies(1,treatData);
+                swapiLib.getMultipleSpecies([1,2,3],treatData);
+                swapiLib.getAllSpecies(treatData);
+                swapiLib.getSpeciesSchema(treatData);
 
+                swapiLib.getPlanet(1,treatData);
+                swapiLib.getMultiplePlanets([1,2,3],treatData);
+                swapiLib.getAllPlanets(treatData);
+                swapiLib.getPlanetsSchema(treatData);
+                //------------- TESTS end ----------------------------------
         </script>
 
     </body>
