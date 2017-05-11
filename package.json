@@ -2,10 +2,6 @@
   "name": "swapi_lib",
   "version": "1.0.0",
   "description": "Library/Wrapper for https://swapi.co",
-  "main": "index.js",
-  "scripts": {
-    "test": "run"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jmales/SWAPI_LIB.git"

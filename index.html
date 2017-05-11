@@ -7,8 +7,6 @@
 </head>
 
 <body>
-
-    <!--Test div-->
     <div>
         <h1>Test being performed on console. Check developer tools.</h1><br>
     </div>
@@ -23,20 +21,21 @@
                 console.log(response);
             })
             .catch(function (error) {
-                console.log(error);
+                console.log("%c" + "Failed Query", 'background: red; color: white; display: block;');
+                console.log("ERROR. " + error);
         });
     }
     
         //TESTS
-        // treatData(swapiLib.getResources())
-        // treatData(swapiLib.getResources(1));  //Is supposed to give ERROR
+        treatData(swapiLib.getResources())
+        treatData(swapiLib.getResources(1));  //Is supposed to give object with ERROR
 
-        // var People = swapiLib.People;
-        // treatData(People.getPeople([1,200])); 
-        // treatData(People.getPeople(1,2));     //Is supposed to give ERROR
-        // treatData(People.getPeople([1,2,3]));
-        // treatData(People.getPeople());        //Get all People
-        // treatData(People.getPeopleSchema())
+        var People = swapiLib.People;
+        treatData(People.getPeople([1,200])); 
+        treatData(People.getPeople(1,2));     //Is supposed to give ERROR
+        treatData(People.getPeople([1,2,3]));
+        treatData(People.getPeople());        //Get all People
+        treatData(People.getPeopleSchema())
 
         // var Films = swapiLib.Films;
         // treatData(Films.getFilms(1)); 
@@ -59,13 +58,7 @@
         // treatData(Vehicles.getVehicles());
         // treatData(Vehicles.getVehiclesSchema());
 
-        swapiLib.Vehicles.getVehicles([1,2,3]).then(function (response) {
-                console.log("%c" + "New Query", 'background: green; color: white; display: block;');
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-        });
+ 
         // var Species = swapiLib.Species;
         // treatData(Species.getSpecies(1));
         // treatData(Species.getSpecies([1,2,3]));
